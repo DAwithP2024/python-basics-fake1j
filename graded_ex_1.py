@@ -113,8 +113,8 @@ def main():
         print("3. Go back to categories")
         print("4. Finish shopping")
         
-        action_choice = int(input("Choose an option: "))
-        if action_choice == 1:
+        num = int(input("Choose an option: "))
+        if num == 1:
             product_choice = int(input("Select a product by number: ")) - 1
             if 0 <= product_choice < len(products_list):
                 quantity = input("Enter quantity: ")
@@ -125,7 +125,7 @@ def main():
             else:
                 print("Invalid product selection.")
         
-        elif action_choice == 2:
+        elif num == 2:
             sort_order = input("Sort ascending (1) or descending (2)? ")
             if sort_order == '1':
                 display_sorted_products(products_list, "asc")
@@ -134,7 +134,7 @@ def main():
             else:
                 print("Invalid choice.")
         
-        elif action_choice == 3:
+        elif num == 3:
             display_categories()
             category_index = int(input("Select a category by number: ")) - 1
             while category_index < 0 or category_index >= category_count:
@@ -143,7 +143,7 @@ def main():
             selected_category = list(products.keys())[category_index]
             products_list = products[selected_category]
         
-        elif action_choice == 4:
+        elif num == 4:
             if cart:
                 total_cost = display_cart(cart)
                 address = input("Enter delivery address: ")
